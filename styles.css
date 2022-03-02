@@ -105,8 +105,8 @@ h3 {
 
 /* GAME VIEWS */
 img {
-    height: 10em;
-    width: 10em;
+    height: 13em;
+    width: 13em;
 }
 
 .characters-subscreen {
@@ -117,10 +117,10 @@ img {
 }
 
 .character {
-    background-color: rgb(128, 54, 54);
-    border-color: blue;
-    height: 10em;
-    width: 10em;
+    /* background-color: rgb(128, 54, 54); */
+    height: 13em;
+    margin: 1.5em;
+    width: 13em;
 }
 
 /* PLAYER & COMPUTER BARS */

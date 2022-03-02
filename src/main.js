@@ -46,10 +46,7 @@ var characterOption = {
     ]
 };
 
-// var centerBar = document.querySelector('.center-bar');
 var gameModesSection = document.querySelector('#gameModes');
-var classicMode = document.querySelector('#classic');
-var challengeMode = document.querySelector('#challenge');
 var playerSide = document.querySelector('#playerSide');
 var characterOptions = document.querySelector('#characterOptions');
 var backButton = document.querySelector('#backButton');
@@ -76,9 +73,9 @@ function loadCharacters(gameMode, characters) {
     for (var i = 0; i < characters.length; i++) {
         characterOptions.innerHTML += `
         <section class='character'>
-        <h3>${characters[i].name}</h3>
         <img src=${characters[i].img} />
         </section>`
+        // <h3>${characters[i].name}</h3>
     }
 }
 
