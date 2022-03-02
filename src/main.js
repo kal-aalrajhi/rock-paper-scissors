@@ -46,6 +46,7 @@ var characterOption = {
     ]
 };
 
+var currentGame = "";
 var gameModesSection = document.querySelector('#gameModes');
 var playerSide = document.querySelector('#playerSide');
 var characterOptions = document.querySelector('#characterOptions');
@@ -58,8 +59,10 @@ backButton.addEventListener('click', loadGameTypes);
 // Functions
 function pickGameMode(event) {
     if (event.target.id === 'classic') {
+        currentGame = new Game('classic');
         loadCharacters('classic', characterOption.classic);
     } else if (event.target.id === 'challenge'){
+        // currentGame = new Game('challenge');
         loadCharacters('challenge', characterOption.challenge);
     }
 }
@@ -75,7 +78,6 @@ function loadCharacters(gameMode, characters) {
         <section class='character'>
         <img src=${characters[i].img} />
         </section>`
-        // <h3>${characters[i].name}</h3>
     }
 }
 
