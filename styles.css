@@ -103,6 +103,26 @@ h3 {
     border: 0.1em solid floralwhite;
 }
 
+/* GAME VIEWS */
+img {
+    height: 10em;
+    width: 10em;
+}
+
+.item-subscreen {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 5em;
+}
+
+.item {
+    background-color: rgb(128, 54, 54);
+    border-color: blue;
+    height: 10em;
+    width: 10em;
+}
+
 /* PLAYER & COMPUTER BARS */
 .side-bar {
     background-color: #264653;
