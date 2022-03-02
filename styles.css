@@ -103,6 +103,26 @@ h3 {
     border: 0.1em solid floralwhite;
 }
 
+/* GAME VIEWS */
+img {
+    height: 13em;
+    width: 13em;
+}
+
+.characters-subscreen {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 5em;
+}
+
+.character {
+    /* background-color: rgb(128, 54, 54); */
+    height: 13em;
+    margin: 1.5em;
+    width: 13em;
+}
+
 /* PLAYER & COMPUTER BARS */
 .side-bar {
     background-color: #264653;
@@ -111,7 +131,6 @@ h3 {
     flex-direction: column;
     padding: 0.1em;
 }
-
 
 /* BUTTONS */
 button {
