@@ -1,0 +1,139 @@
+/* 
+COLORS
+#264653
+#2a9d8f
+#e9c46a
+#f4a261
+#e76f51
+ghostwhite
+floralwhite
+*/
+
+/* * {
+    border: 0.1em solid rgb(216, 158, 158);
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+} */
+
+/* GENERAL */
+html, body {
+    height: 100%;
+  }
+
+body {
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    margin: 0em;
+    text-align: center;
+}
+
+/* TEXT */
+h1, h2, h3 {
+    color: ghostwhite;
+    margin: 0.5em 0em;
+    text-transform: capitalize;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h3 {
+    color: floralwhite;
+    margin-top: 1em;
+    text-transform: uppercase;
+}
+
+.game-mode h3 {
+    background-color: #e76f51;
+    margin: 0em 0em;
+    padding: 1em;
+}
+
+/* MAIN VIEW */
+.center-bar {
+    background-color: #2a9d8f;
+    border-left: 0.2em solid #26465350;
+    border-right: 0.2em solid #26465350;
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: column;
+    padding: 0.1em;
+}
+
+.game-title {
+    /* background-color: red; */
+    flex-basis: 15%;
+}
+
+.game-mode-subscreen{
+    /* background-color: blue; */
+    align-items: center;
+    display: flex;
+    flex-basis: 85%;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.game-mode {
+    cursor: crosshair;
+    height: 14em;
+    width: 40em;
+}
+
+.game-mode:hover {
+    border-color: #e9c46a;
+    box-shadow: 0px 0.5em 0.5em -0.4em #e9c46a;
+    transform: translateY(-0.25em);
+}
+
+#classic {
+    background-color: #e9c46a;
+    border: 0.1em solid floralwhite;
+}
+
+#challenge {
+    background-color: #f4a261;
+    border: 0.1em solid floralwhite;
+}
+
+/* PLAYER & COMPUTER BARS */
+.side-bar {
+    background-color: #264653;
+    display: flex;
+    flex-basis: 25%;
+    flex-direction: column;
+    padding: 0.1em;
+}
+
+
+/* BUTTONS */
+button {
+    background: none;
+    border: 0.2em solid;
+    color: #f4a261;
+    cursor: crosshair;
+    font-size: 1em;
+    margin: 30.5em 0 0 2.5em;
+    padding: 1em 2em;
+    transition: all 0.25s;
+    width: 8em;
+}
+
+button:hover {
+    border-color: #e9c46a;
+    box-shadow: 0 0.4em 0.4em -0.4em #e9c46a;
+    color: floralwhite;
+    transform: translateY(-0.25em);
+}
+
+/* FUNCTIONALITY */
+.hidden {
+    display: none;
+}
