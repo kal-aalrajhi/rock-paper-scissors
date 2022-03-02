@@ -109,14 +109,14 @@ img {
     width: 10em;
 }
 
-.item-subscreen {
+.characters-subscreen {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin: 5em;
 }
 
-.item {
+.character {
     background-color: rgb(128, 54, 54);
     border-color: blue;
     height: 10em;

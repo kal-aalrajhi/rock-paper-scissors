@@ -1,5 +1,5 @@
 // Global Variables
-var gameOptions = {
+var characterOption = {
     classic: [
         {
             name: 'guitar',
@@ -51,32 +51,33 @@ var gameModesSection = document.querySelector('#gameModes');
 var classicMode = document.querySelector('#classic');
 var challengeMode = document.querySelector('#challenge');
 var playerSide = document.querySelector('#playerSide');
-var itemOptions = document.querySelector('#itemOptions');
+var characterOptions = document.querySelector('#characterOptions');
 var backButton = document.querySelector('#backButton');
 
 // Event Listeners
 gameModesSection.addEventListener('click', pickGameMode);
+backButton.addEventListener('click', loadGameTypes);
 
 // Functions
 function pickGameMode(event) {
     if (event.target.id === 'classic') {
-        playGame('classic', gameOptions.classic);
+        loadCharacters('classic', characterOption.classic);
     } else if (event.target.id === 'challenge'){
-        playGame('challenge', gameOptions.challenge);
+        loadCharacters('challenge', characterOption.challenge);
     }
 }
 
-function playGame(gameMode, options) {
+function loadCharacters(gameMode, characters) {
     // Render game type
     hideElement(gameModesSection);
-    unhideElement(itemOptions);
+    unhideElement(characterOptions);
     unhideElement(backButton);
 
-    for (var i = 0; i < options.length; i++) {
-        itemOptions.innerHTML += `
-        <section class='item'>
-        <h3>${options[i].name}</h3>
-        <img src=${options[i].img} />
+    for (var i = 0; i < characters.length; i++) {
+        characterOptions.innerHTML += `
+        <section class='character'>
+        <h3>${characters[i].name}</h3>
+        <img src=${characters[i].img} />
         </section>`
     }
 }
@@ -87,4 +88,11 @@ function hideElement(elementToHide) {
 
 function unhideElement(elementToUnhide) {
     elementToUnhide.classList.remove('hidden');
+}
+
+function loadGameTypes() {
+    characterOptions.innerHTML = "";
+    hideElement(characterOptions);
+    hideElement(backButton);
+    unhideElement(gameModesSection);
 }
