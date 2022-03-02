@@ -45,8 +45,10 @@ class Game {
         }
     }
 
-    // resetGame(){
-    // }
+    resetGame(){
+        this.human.wins = 0;
+        this.computer.wins = 0;
+    }
 }
 
 // Simulate game in console via node
@@ -71,8 +73,28 @@ console.log(game2.checkWinConditions('guitar', 'swords'));
 console.log(game2.checkWinConditions('guitar', 'swords'));
 console.log(game1.checkWinConditions('toilet paper', 'guitar'));
 console.log(game2.checkWinConditions('swords', 'toilet paper'));
+console.log();
 
-console.log(game1.computer);
-console.log(game1.human);
-console.log(game2.computer);
-console.log(game2.human);
+// Check wins
+console.log(game1.computer.wins);
+console.log(game1.human.wins);
+console.log(game2.computer.wins);
+console.log(game2.human.wins);
+
+game1.resetGame();
+console.log();
+
+// Recheck wins for game1 (should be reset)
+console.log(game1.computer.wins);
+console.log(game1.human.wins);
+console.log(game2.computer.wins);
+console.log(game2.human.wins);
+
+game2.resetGame();
+console.log();
+
+// Recheck wins for game1 and game 2 (should be reset)
+console.log(game1.computer.wins);
+console.log(game1.human.wins);
+console.log(game2.computer.wins);
+console.log(game2.human.wins);
