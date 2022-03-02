@@ -1,51 +1,90 @@
 // Global Variables
 var gameOptions = {
-    classicOptions: [
+    classic: [
         {
-            name: 'rock',
+            name: 'guitar',
             img: 'assests/guitar.png',
-            weakness: 'paper'
+            weakness: ['toilet paper']
         },
         {
-            name: 'paper',
+            name: 'toilet paper',
             img: 'assests/toilet-paper.png',
-            weakness: 'scissors'
+            weakness: ['swords']
         },
         {
-            name: 'scissors',
+            name: 'swords',
             img: 'assests/swords.png',
-            weakness: 'rock'
+            weakness: ['guitar']
         }
     ],
-    challengeOptions: [
+    challenge: [
         {
-            name: 'rock',
-            img: 'https://bit.ly/2wQwmYG',
-            weakness: 'paper'
+            name: 'guitar',
+            img: 'assests/guitar.png',
+            weakness: ['toilet paper', 'robot']
         },
         {
-            name: 'paper',
-            img: 'https://bit.ly/2wQwmYG',
-            weakness: 'scissors'
+            name: 'toilet paper',
+            img: 'assests/toilet-paper.png',
+            weakness: ['swords', 'ninja']
         },
         {
-            name: 'scissors',
-            img: 'https://bit.ly/2wQwmYG',
-            weakness: 'rock'
+            name: 'swords',
+            img: 'assests/swords.png',
+            weakness: ['guitar', 'robot']
         },
         {
-            name: 'stapler',
-            img: 'https://bit.ly/2wQwmYG',
-            weakness: 'scissors'
+            name: 'ninja',
+            img: 'assests/ninja.png',
+            weakness: ['swords', 'guitar']
         },
         {
-            name: 'trash',
-            img: 'https://bit.ly/2wQwmYG',
-            weakness: 'rock'
+            name: 'robot',
+            img: 'assests/robot.png',
+            weakness: ['toilet paper', 'ninja']
         }
     ]
 };
 
+// var centerBar = document.querySelector('.center-bar');
+var gameModesSection = document.querySelector('#gameModes');
+var classicMode = document.querySelector('#classic');
+var challengeMode = document.querySelector('#challenge');
+var playerSide = document.querySelector('#playerSide');
+var itemOptions = document.querySelector('#itemOptions');
+var backButton = document.querySelector('#backButton');
 
 // Event Listeners
+gameModesSection.addEventListener('click', pickGameMode);
+
 // Functions
+function pickGameMode(event) {
+    if (event.target.id === 'classic') {
+        playGame('classic', gameOptions.classic);
+    } else if (event.target.id === 'challenge'){
+        playGame('challenge', gameOptions.challenge);
+    }
+}
+
+function playGame(gameMode, options) {
+    // Render game type
+    hideElement(gameModesSection);
+    unhideElement(itemOptions);
+    unhideElement(backButton);
+
+    for (var i = 0; i < options.length; i++) {
+        itemOptions.innerHTML += `
+        <section class='item'>
+        <h3>${options[i].name}</h3>
+        <img src=${options[i].img} />
+        </section>`
+    }
+}
+
+function hideElement(elementToHide) {
+    elementToHide.classList.add('hidden');
+}
+
+function unhideElement(elementToUnhide) {
+    elementToUnhide.classList.remove('hidden');
+}
