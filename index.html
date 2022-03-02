@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="./styles.css" type="text/css" rel="stylesheet">
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <!-- PLAYER STATS -->
+    <summary class="side-bar" id="playerSide">
+      <h2>player</h2>
+      <h3>score: 0</h3>
+      <button class="hidden" id="backButton">back</button>
+    </summary>
+    <!-- CENTER SCREEN -->
+    <main class="center-bar">
+      <section class="game-title">
+        <h1>rock, paper, scissors</h1>
+        <h2>choose your game type</h2>
+      </section>
+      <!-- SUBSCREEN -->
+      <section class="item-subscreen hidden" id="itemOptions">
+        <!-- respective mode items placed here -->
+      </section>
+      <!--choose game mode screen-->
+      <section class="game-mode-subscreen" id="gameModes">
+        <section class="game-mode" id="classic">
+          <h3>classic</h3>
+        </section>
+        <section class="game-mode" id="challenge">
+          <h3>challenge</h3>
+        </section>
+      </section>
+    </main>
+    <!-- COMPUTER STATS -->
+    <summary class="side-bar" id="computerSide">
+      <h2>computer</h2>
+      <h3>score: 0</h3>
+    </summary>
+  </body>
+  <script type="text/javascript" src="./src/main.js"></script>
+</html>
