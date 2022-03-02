@@ -20,20 +20,26 @@ class Game {
             return 'DRAW!';
         } else if (humanChoice === 'guitar') {
             if (computerChoice === 'toilet paper') {
-                return 'YOU LOSE!'
+                this.computer.wins++;
+                return 'YOU LOSE!';
             } else {
+                this.human.wins++;
                 return 'YOU WIN!';
             }
         } else if (humanChoice === 'toilet paper') {
             if (computerChoice === 'swords') {
-                return 'YOU LOSE!'
+                this.computer.wins++;
+                return 'YOU LOSE!';
             } else {
+                this.human.wins++;
                 return 'YOU WIN!';
             }
         } else if (humanChoice === 'swords') {
             if (computerChoice === 'guitar') {
-                return 'YOU LOSE!'
+                this.computer.wins++;
+                return 'YOU LOSE!';
             } else {
+                this.human.wins++;
                 return 'YOU WIN!';
             }
         }
@@ -53,15 +59,20 @@ console.log(game2.checkWinConditions('toilet paper', 'toilet paper'));
 console.log(game1.checkWinConditions('swords', 'swords'));
 console.log();
 
-// Simulate loses
+// Simulate human loses
 console.log(game1.checkWinConditions('guitar', 'toilet paper'));
 console.log(game2.checkWinConditions('toilet paper', 'swords'));
 console.log(game1.checkWinConditions('swords', 'guitar'));
 console.log();
 
-// Simulate wins
+// Simulate human wins
+console.log(game2.checkWinConditions('guitar', 'swords'));
+console.log(game2.checkWinConditions('guitar', 'swords'));
 console.log(game2.checkWinConditions('guitar', 'swords'));
 console.log(game1.checkWinConditions('toilet paper', 'guitar'));
 console.log(game2.checkWinConditions('swords', 'toilet paper'));
 
-
+console.log(game1.computer);
+console.log(game1.human);
+console.log(game2.computer);
+console.log(game2.human);
