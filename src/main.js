@@ -1,10 +1,12 @@
 // Global Variables
 var currentGame = "";
 var gameModesSection = document.querySelector('#gameModes');
-var playerSide = document.querySelector('#playerSide');
+var humanSide = document.querySelector('#humanSide');
 var characterOptions = document.querySelector('#characterOptions');
 var backButton = document.querySelector('#backButton');
 var subtitle = document.querySelector('#subtitle');
+var humanScore = document.querySelector('#humanScore');
+var computerScore = document.querySelector('#computerScore');
 
 // Event Listeners
 gameModesSection.addEventListener('click', pickGameMode);
@@ -27,7 +29,9 @@ function loadCharacters(characters) {
     unhideElement(characterOptions);
     unhideElement(backButton);
     
-    subtitle.innerHTML = `${currentGame.gameType}`;
+    humanScore.innerText = currentGame.human.wins;
+    computerScore.innerText = currentGame.computer.wins;
+    subtitle.innerHTML = currentGame.gameType;
     characterOptions.innerHTML = "";
     for (var i = 0; i < characters.length; i++) {
         characterOptions.innerHTML += `
@@ -67,7 +71,7 @@ function characterChoice(event) {
         var randIdx = Math.floor(Math.random() * characterOption[currentGame.gameType].length);
         var computerChoice = characterOption[currentGame.gameType][randIdx]; // object
 
-        // Update Player object 
+        // Update respective Player objects 
         currentGame.human.takeTurn(humanChoice);
         currentGame.computer.takeTurn(computerChoice);
         

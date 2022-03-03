@@ -20,10 +20,10 @@ class Game {
             if(humanChoice === characters[i].name) {
                 if (characters[i].weakness.includes(computerChoice)) {
                     this.computer.wins++;
-                    return 'you win!';
+                    return 'you lose!';
                 } else {
                     this.human.wins++;
-                    return 'you lose!';
+                    return 'you win!';
                 }
             }
         }
