@@ -6,31 +6,22 @@ class Game {
     }
 
     checkWinConditions(humanChoice, computerChoice){
+        // Character array - either classic or challenge
+        var characters = characterOption[this.gameType];
+        // Check for draw
         if (humanChoice === computerChoice) {
             return 'DRAW!';
-        } else if (humanChoice === 'guitar') {
-            if (computerChoice === 'toilet-paper') {
-                this.computer.wins++;
-                return 'YOU LOSE!';
-            } else {
-                this.human.wins++;
-                return 'YOU WIN!';
-            }
-        } else if (humanChoice === 'toilet-paper') {
-            if (computerChoice === 'swords') {
-                this.computer.wins++;
-                return 'YOU LOSE!';
-            } else {
-                this.human.wins++;
-                return 'YOU WIN!';
-            }
-        } else if (humanChoice === 'swords') {
-            if (computerChoice === 'guitar') {
-                this.computer.wins++;
-                return 'YOU LOSE!';
-            } else {
-                this.human.wins++;
-                return 'YOU WIN!';
+        } 
+        // Determine outcome
+        for (var i = 0; i < characters.length; i++) {
+            if(humanChoice === characters[i].name) {
+                if (characters[i].weakness.includes(computerChoice)) {
+                    this.computer.wins++;
+                    return 'YOU LOSE!';
+                } else {
+                    this.human.wins++;
+                    return 'YOU WIN!';
+                }
             }
         }
     }
