@@ -5,7 +5,7 @@ class Game {
         this.computer = new Player('Computer', 'Y');
     }
 
-    checkWinConditions() {
+    checkWinConditions(human, computer) {
         // Character array - either classic or challenge
         var characters = characterOption[this.gameType];
         // Check for draw

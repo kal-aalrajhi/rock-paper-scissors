@@ -63,16 +63,13 @@ function characterChoice(event) {
         var characters = characterOption[currentGame.gameType];
         var humanChoice = currentGame.human.takeTurn(event, characters);
         var computerChoice = currentGame.computer.takeRandomTurn(characters) 
-
-        // Assign character object to computer player
-        var computerChoice = characterOption[currentGame.gameType][randIdx]; // object
         
         // Show results to DOM
         loadCharacters([humanChoice, computerChoice])
-        subtitle.innerText = `${currentGame.checkWinConditions(human, computer)}`;
+        subtitle.innerText = `${currentGame.checkWinConditions(currentGame.human, currentGame.computer)}`;
 
         // Reset game board
-        setTimeout(() => {loadCharacters(characterOption[currentGame.gameType])}, 2000);
+        setTimeout(() => {loadCharacters(characters)}, 2000);
     }
 }
 
