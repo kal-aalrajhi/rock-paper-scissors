@@ -4,6 +4,7 @@ var gameModesSection = document.querySelector('#gameModes');
 var playerSide = document.querySelector('#playerSide');
 var characterOptions = document.querySelector('#characterOptions');
 var backButton = document.querySelector('#backButton');
+var subtitle = document.querySelector('#subtitle');
 
 // Event Listeners
 gameModesSection.addEventListener('click', pickGameMode);
@@ -17,15 +18,16 @@ function pickGameMode(event) {
     } else if (event.target.id === 'challenge'){
         currentGame = new Game('challenge');
     }
-    loadCharacters(currentGame.gameType, characterOption[currentGame.gameType]);
+    loadCharacters(characterOption[currentGame.gameType]);
 }
 
-function loadCharacters(gameMode, characters) {
+function loadCharacters(characters) {
     // Render game type    
     hideElement(gameModesSection);
     unhideElement(characterOptions);
     unhideElement(backButton);
     
+    subtitle.innerHTML = `${currentGame.gameType}`;
     characterOptions.innerHTML = "";
     for (var i = 0; i < characters.length; i++) {
         characterOptions.innerHTML += `
@@ -53,27 +55,27 @@ function loadGameTypes() {
 function characterChoice(event) {
     if(event.target.id !== 'characterOptions') // avoid parent element target from running
     {
-        // Player's choice
+        // Assign character object to human player
         var humanChoice = event.target.id;
-
-        // Computer Choice
+        for (var i = 0; i < 5; i++) {
+            if (humanChoice === characterOption[currentGame.gameType][i].name) {
+                humanChoice = characterOption[currentGame.gameType][i];
+                break;
+            }
+        }
+        // Assign character object to computer player
         var randIdx = Math.floor(Math.random() * characterOption[currentGame.gameType].length);
-        var computerChoice = characterOption[currentGame.gameType][randIdx].name;
+        var computerChoice = characterOption[currentGame.gameType][randIdx]; // object
 
-        // Check who won!
-        // console.log(humanChoice, computerChoice);
-        console.log(currentGame.checkWinConditions(humanChoice, computerChoice));
+        // Update Player object 
+        currentGame.human.takeTurn(humanChoice);
+        currentGame.computer.takeTurn(computerChoice);
+        
+        // Show results to DOM
+        loadCharacters([humanChoice, computerChoice])
+        subtitle.innerText = `${currentGame.checkWinConditions()}`;
 
-        // Reflect winner on screen
-        loadResults(humanChoice, computerChoice);
-        setTimeout(() => {loadCharacters(currentGame.gameType, characterOption[currentGame.gameType])}, 2000);
-    }
-
-    function loadResults(humanChoice, computerChoice) {
-        characterOptions.innerHTML = `
-        <section id='results'>
-            <h1>${currentGame.checkWinConditions(humanChoice, computerChoice)}</h1>
-        </section> `;
-        hideElement(backButton);
+        // Reset game board
+        setTimeout(() => {loadCharacters(characterOption[currentGame.gameType])}, 2000);
     }
 }

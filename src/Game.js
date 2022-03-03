@@ -5,22 +5,25 @@ class Game {
         this.computer = new Player('Computer', 'Y');
     }
 
-    checkWinConditions(humanChoice, computerChoice){
+    checkWinConditions() {
         // Character array - either classic or challenge
         var characters = characterOption[this.gameType];
         // Check for draw
+        var humanChoice = this.human.characterChoice.name;
+        var computerChoice = this.computer.characterChoice.name;
+        
         if (humanChoice === computerChoice) {
-            return 'DRAW!';
+            return 'draw!';
         } 
         // Determine outcome
         for (var i = 0; i < characters.length; i++) {
             if(humanChoice === characters[i].name) {
                 if (characters[i].weakness.includes(computerChoice)) {
                     this.computer.wins++;
-                    return 'YOU LOSE!';
+                    return 'you win!';
                 } else {
                     this.human.wins++;
-                    return 'YOU WIN!';
+                    return 'you lose!';
                 }
             }
         }

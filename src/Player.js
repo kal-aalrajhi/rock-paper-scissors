@@ -6,10 +6,10 @@ class Player {
         this.name = name;
         this.token = token;
         this.wins = 0;
-        this.choice = "";
+        this.characterChoice = {};
     }
 
-    // takeTurn() {
-    //     // 
-    // }
+    takeTurn(character) {
+        this.characterChoice = character;
+    }
 }
