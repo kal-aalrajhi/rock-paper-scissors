@@ -16,7 +16,7 @@ function pickGameMode(event) {
         currentGame = new Game('classic');
         loadCharacters('classic', characterOption.classic);
     } else if (event.target.id === 'challenge'){
-        // currentGame = new Game('challenge');
+        currentGame = new Game('challenge');
         loadCharacters('challenge', characterOption.challenge);
     }
 }
