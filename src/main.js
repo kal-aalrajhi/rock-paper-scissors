@@ -31,7 +31,7 @@ function loadCharacters(characters) {
     
     humanScore.innerText = currentGame.human.wins;
     computerScore.innerText = currentGame.computer.wins;
-    subtitle.innerHTML = currentGame.gameType;
+    subtitle.innerHTML = "choose your character";
     
     characterOptions.innerHTML = "";
     for (var i = 0; i < characters.length; i++) {
@@ -55,6 +55,10 @@ function loadGameTypes() {
     hideElement(characterOptions);
     hideElement(backButton);
     unhideElement(gameModesSection);
+
+    subtitle.innerHTML = "choose your game type";
+    humanScore.innerText = 0;
+    computerScore.innerText = 0;
 }
 
 function characterChoice(event) {
@@ -63,47 +67,13 @@ function characterChoice(event) {
         // Choose character
         var characters = characterOption[currentGame.gameType];
         var humanChoice = currentGame.human.takeTurn(event, characters);
-        var computerChoice = currentGame.computer.takeRandomTurn(characters) 
+        var computerChoice = currentGame.computer.takeRandomTurn(characters);
         
         // Show results to DOM
-        loadCharacters([humanChoice, computerChoice])
+        loadCharacters([humanChoice, computerChoice]);
         subtitle.innerText = currentGame.checkWinConditions();
         
         // Reset current gameboard to current set of characters
         currentGame.resetBoard(characters);
     }
 }
-
-// function scream() {
-//     console.log("WOWOWOWOWO!");
-// }
-
-
-// function characterChoice(event) {
-//     // icon class workaround (instead of id)
-//     if(event.target.id !== 'characterOptions') // avoid parent element target from running 
-//     {
-//         // Assign character object to human player
-//         var humanChoice = event.target.id;
-//         for (var i = 0; i < 5; i++) {
-//             if (humanChoice === characterOption[currentGame.gameType][i].name) {
-//                 humanChoice = characterOption[currentGame.gameType][i];
-//                 break;
-//             }
-//         }
-//         // Assign character object to computer player
-//         var randIdx = Math.floor(Math.random() * characterOption[currentGame.gameType].length);
-//         var computerChoice = characterOption[currentGame.gameType][randIdx]; // object
-
-//         // Update respective Player objects 
-//         currentGame.human.takeTurn(humanChoice);
-//         currentGame.computer.takeTurn(computerChoice);
-        
-//         // Show results to DOM
-//         loadCharacters([humanChoice, computerChoice])
-//         subtitle.innerText = `${currentGame.checkWinConditions()}`;
-
-//         // Reset game board
-//         setTimeout(() => {loadCharacters(characterOption[currentGame.gameType])}, 2000);
-//     }
-// }

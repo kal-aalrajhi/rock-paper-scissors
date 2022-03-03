@@ -32,4 +32,8 @@ class Game {
     resetBoard(characters) {
         setTimeout(() => {loadCharacters(characters)}, 2000);
     }
+
+    // resetScores() {
+        // Maybe add this?
+    // }
 }
