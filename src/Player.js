@@ -9,7 +9,19 @@ class Player {
         this.characterChoice = {};
     }
 
-    takeTurn(character) {
-        this.characterChoice = character;
+    takeTurn(event, characters) {
+        // Human turn
+        for (var i = 0; i < 5; i++) {
+            if (event.target.id === characters[i].name) {
+                var characterChoice = characters[i];
+                return characterChoice;
+            }
+        }
+    }
+
+    takeRandomTurn(characters) {
+        var randIdx = Math.floor(Math.random() * characters.length);
+        var characterChoice = characters[randIdx];
+        return characterChoice;
     }
 }

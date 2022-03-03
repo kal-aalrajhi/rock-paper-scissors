@@ -29,8 +29,7 @@ class Game {
         }
     }
 
-    resetGame(){
-        this.human.wins = 0;
-        this.computer.wins = 0;
+    resetBoard(){
+        //TODO
     }
 }
