@@ -14,19 +14,19 @@ characterOptions.addEventListener('click', characterChoice);
 function pickGameMode(event) {
     if (event.target.id === 'classic') {
         currentGame = new Game('classic');
-        loadCharacters('classic', characterOption.classic);
     } else if (event.target.id === 'challenge'){
         currentGame = new Game('challenge');
-        loadCharacters('challenge', characterOption.challenge);
     }
+    loadCharacters(currentGame.gameType, characterOption[currentGame.gameType]);
 }
 
 function loadCharacters(gameMode, characters) {
-    // Render game type
+    // Render game type    
     hideElement(gameModesSection);
     unhideElement(characterOptions);
     unhideElement(backButton);
-
+    
+    characterOptions.innerHTML = "";
     for (var i = 0; i < characters.length; i++) {
         characterOptions.innerHTML += `
         <section class='character'>
@@ -61,7 +61,19 @@ function characterChoice(event) {
         var computerChoice = characterOption[currentGame.gameType][randIdx].name;
 
         // Check who won!
-        console.log(humanChoice, computerChoice);
+        // console.log(humanChoice, computerChoice);
         console.log(currentGame.checkWinConditions(humanChoice, computerChoice));
+
+        // Reflect winner on screen
+        loadResults(humanChoice, computerChoice);
+        setTimeout(() => {loadCharacters(currentGame.gameType, characterOption[currentGame.gameType])}, 2000);
+    }
+
+    function loadResults(humanChoice, computerChoice) {
+        characterOptions.innerHTML = `
+        <section id='results'>
+            <h1>${currentGame.checkWinConditions(humanChoice, computerChoice)}</h1>
+        </section> `;
+        hideElement(backButton);
     }
 }
