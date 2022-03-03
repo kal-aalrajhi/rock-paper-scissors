@@ -1,51 +1,5 @@
 // Global Variables
-var characterOption = {
-    classic: [
-        {
-            name: 'guitar',
-            img: 'assests/guitar.png',
-            weakness: ['toilet paper']
-        },
-        {
-            name: 'toilet paper',
-            img: 'assests/toilet-paper.png',
-            weakness: ['swords']
-        },
-        {
-            name: 'swords',
-            img: 'assests/swords.png',
-            weakness: ['guitar']
-        }
-    ],
-    challenge: [
-        {
-            name: 'guitar',
-            img: 'assests/guitar.png',
-            weakness: ['toilet paper', 'robot']
-        },
-        {
-            name: 'toilet paper',
-            img: 'assests/toilet-paper.png',
-            weakness: ['swords', 'ninja']
-        },
-        {
-            name: 'swords',
-            img: 'assests/swords.png',
-            weakness: ['guitar', 'robot']
-        },
-        {
-            name: 'ninja',
-            img: 'assests/ninja.png',
-            weakness: ['swords', 'guitar']
-        },
-        {
-            name: 'robot',
-            img: 'assests/robot.png',
-            weakness: ['toilet paper', 'ninja']
-        }
-    ]
-};
-
+var currentGame = "";
 var gameModesSection = document.querySelector('#gameModes');
 var playerSide = document.querySelector('#playerSide');
 var characterOptions = document.querySelector('#characterOptions');
@@ -54,12 +8,15 @@ var backButton = document.querySelector('#backButton');
 // Event Listeners
 gameModesSection.addEventListener('click', pickGameMode);
 backButton.addEventListener('click', loadGameTypes);
+characterOptions.addEventListener('click', characterChoice);
 
 // Functions
 function pickGameMode(event) {
     if (event.target.id === 'classic') {
+        currentGame = new Game('classic');
         loadCharacters('classic', characterOption.classic);
     } else if (event.target.id === 'challenge'){
+        currentGame = new Game('challenge');
         loadCharacters('challenge', characterOption.challenge);
     }
 }
@@ -73,9 +30,8 @@ function loadCharacters(gameMode, characters) {
     for (var i = 0; i < characters.length; i++) {
         characterOptions.innerHTML += `
         <section class='character'>
-        <img src=${characters[i].img} />
+            <img id=${characters[i].name} src=${characters[i].img} />
         </section>`
-        // <h3>${characters[i].name}</h3>
     }
 }
 
@@ -92,4 +48,20 @@ function loadGameTypes() {
     hideElement(characterOptions);
     hideElement(backButton);
     unhideElement(gameModesSection);
+}
+
+function characterChoice(event) {
+    if(event.target.id !== 'characterOptions') // avoid parent element target from running
+    {
+        // Player's choice
+        var humanChoice = event.target.id;
+
+        // Computer Choice
+        var randIdx = Math.floor(Math.random() * characterOption[currentGame.gameType].length);
+        var computerChoice = characterOption[currentGame.gameType][randIdx].name;
+
+        // Check who won!
+        console.log(humanChoice, computerChoice);
+        console.log(currentGame.checkWinConditions(humanChoice, computerChoice));
+    }
 }
