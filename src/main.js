@@ -7,7 +7,7 @@ var characterOption = {
             weakness: ['toilet paper']
         },
         {
-            name: 'toilet paper',
+            name: 'toilet-paper',
             img: 'assests/toilet-paper.png',
             weakness: ['swords']
         },
@@ -21,10 +21,10 @@ var characterOption = {
         {
             name: 'guitar',
             img: 'assests/guitar.png',
-            weakness: ['toilet paper', 'robot']
+            weakness: ['toilet-paper', 'robot']
         },
         {
-            name: 'toilet paper',
+            name: 'toilet-paper',
             img: 'assests/toilet-paper.png',
             weakness: ['swords', 'ninja']
         },
@@ -41,7 +41,7 @@ var characterOption = {
         {
             name: 'robot',
             img: 'assests/robot.png',
-            weakness: ['toilet paper', 'ninja']
+            weakness: ['toilet-paper', 'ninja']
         }
     ]
 };
@@ -55,6 +55,7 @@ var backButton = document.querySelector('#backButton');
 // Event Listeners
 gameModesSection.addEventListener('click', pickGameMode);
 backButton.addEventListener('click', loadGameTypes);
+characterOptions.addEventListener('click', characterChoice);
 
 // Functions
 function pickGameMode(event) {
@@ -76,7 +77,7 @@ function loadCharacters(gameMode, characters) {
     for (var i = 0; i < characters.length; i++) {
         characterOptions.innerHTML += `
         <section class='character'>
-        <img src=${characters[i].img} />
+            <img id=${characters[i].name} src=${characters[i].img} />
         </section>`
     }
 }
@@ -94,4 +95,20 @@ function loadGameTypes() {
     hideElement(characterOptions);
     hideElement(backButton);
     unhideElement(gameModesSection);
+}
+
+function characterChoice(event) {
+    if(event.target.id !== 'characterOptions') // avoid parent element target from running
+    {
+        // Player's choice
+        var humanChoice = event.target.id;
+
+        // Computer Choice
+        var randIdx = Math.floor(Math.random() * characterOption[currentGame.gameType].length);
+        var computerChoice = characterOption[currentGame.gameType][randIdx].name;
+
+        // Check who won!
+        console.log(humanChoice, computerChoice);
+        console.log(currentGame.checkWinConditions(humanChoice, computerChoice));
+    }
 }
