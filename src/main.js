@@ -60,20 +60,23 @@ function loadGameTypes() {
 function characterChoice(event) {
     if(event.target.id !== 'characterOptions') // avoid parent element target from running 
     {
+        // Choose character
         var characters = characterOption[currentGame.gameType];
         var humanChoice = currentGame.human.takeTurn(event, characters);
         var computerChoice = currentGame.computer.takeRandomTurn(characters) 
         
         // Show results to DOM
         loadCharacters([humanChoice, computerChoice])
-        subtitle.innerText = `${currentGame.checkWinConditions(currentGame.human, currentGame.computer)}`;
-
-        // Reset game board
-        setTimeout(() => {loadCharacters(characters)}, 2000);
+        subtitle.innerText = currentGame.checkWinConditions();
+        
+        // Reset current gameboard to current set of characters
+        currentGame.resetBoard(characters);
     }
 }
 
-
+// function scream() {
+//     console.log("WOWOWOWOWO!");
+// }
 
 
 // function characterChoice(event) {

@@ -5,7 +5,7 @@ class Game {
         this.computer = new Player('Computer', 'Y');
     }
 
-    checkWinConditions(human, computer) {
+    checkWinConditions() {
         // Character array - either classic or challenge
         var characters = characterOption[this.gameType];
         // Check for draw
@@ -29,7 +29,7 @@ class Game {
         }
     }
 
-    resetBoard(){
-        //TODO
+    resetBoard(characters) {
+        setTimeout(() => {loadCharacters(characters)}, 2000);
     }
 }
