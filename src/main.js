@@ -1,14 +1,20 @@
 // Global Variables
+var currentGame = new Game;
+
+// Global Selectors
 var backButton = document.querySelector('#backButton');
 var characterOptions = document.querySelector('#characterOptions');
 var computerScore = document.querySelector('#computerScore');
-var currentGame = new Game;
 var gameModesSection = document.querySelector('#gameModes');
 var humanScore = document.querySelector('#humanScore');
 var humanSide = document.querySelector('#humanSide');
 var subtitle = document.querySelector('#subtitle');
 
 // Event Listeners
+window.addEventListener('load', () => {
+    currentGame.updateScores();
+  });
+  
 backButton.addEventListener('click', loadGameTypes);
 characterOptions.addEventListener('click', characterChoice);
 gameModesSection.addEventListener('click', pickGameMode);
