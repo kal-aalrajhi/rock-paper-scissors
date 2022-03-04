@@ -40,4 +40,9 @@ class Game {
         humanScore.innerText = this.human.wins;
         computerScore.innerText = this.computer.wins;
     }
+
+    resetScores() {
+        localStorage.clear();
+        this.updateScores();
+    }
 }

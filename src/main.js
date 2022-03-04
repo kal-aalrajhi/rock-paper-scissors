@@ -14,7 +14,7 @@ var subtitle = document.querySelector('#subtitle');
 window.addEventListener('load', () => {
     currentGame.updateScores();
   });
-  
+
 backButton.addEventListener('click', loadGameTypes);
 characterOptions.addEventListener('click', characterChoice);
 gameModesSection.addEventListener('click', pickGameMode);
@@ -78,5 +78,3 @@ function hideElement(elementToHide) {
 function unhideElement(elementToUnhide) {
     elementToUnhide.classList.remove('hidden');
 }
-
-// console.log(currentGame.computer.wins);
