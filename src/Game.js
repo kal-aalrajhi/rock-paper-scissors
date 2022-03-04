@@ -1,8 +1,8 @@
 class Game {
     constructor(gameType) {
         this.gameType = gameType;
-        this.human = new Player('Human', 'X');
-        this.computer = new Player('Computer', 'Y');
+        this.human = new Player('Human', '👨🏽‍🚀');
+        this.computer = new Player('Computer', '🤖');
     }
 
     checkWinConditions() {
@@ -20,10 +20,10 @@ class Game {
             if(humanChoice === characters[i].name) {
                 if (characters[i].weakness.includes(computerChoice)) {
                     this.computer.wins++;
-                    return 'you lose!';
+                    return `${this.computer.token} ${this.computer.name} wins this round! ${this.computer.token}`;
                 } else {
                     this.human.wins++;
-                    return 'you win!';
+                    return `${this.human.token} ${this.human.name} wins this round! ${this.human.token}`;
                 }
             }
         }
@@ -31,9 +31,12 @@ class Game {
 
     resetBoard(characters) {
         setTimeout(() => {loadCharacters(characters)}, 2000);
+        humanScore.innerText = this.human.wins;
+        computerScore.innerText = this.computer.wins;
     }
 
-    // resetScores() {
-        // Maybe add this?
-    // }
+    resetScores() {
+        this.human.wins = 0;
+        this.computer.wins = 0;
+    }
 }

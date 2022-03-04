@@ -7,7 +7,6 @@ class Player {
     }
 
     takeTurn(event, characters) {
-        // Human turn
         for (var i = 0; i < characters.length; i++) {
             if (event.target.id === characters[i].name) {
                 this.characterChoice = characters[i];

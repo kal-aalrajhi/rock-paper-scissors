@@ -22,14 +22,15 @@ floralwhite
 } */
 
 /* GENERAL */
-html, body {
+/* html, body {
     height: 100vh;
     max-height: 100vh;
-  }
+  } */
 
 body {
     display: flex;
     font-family: 'Roboto', sans-serif;
+    height: 100vh;
     margin: 0em;
     text-align: center;
 }
@@ -53,6 +54,11 @@ h3 {
     color: floralwhite;
     margin-top: 1em;
     text-transform: uppercase;
+}
+
+p {
+    font-size: 4em;
+    margin-bottom: 0.25em;
 }
 
 .game-mode h3 {
