@@ -11,8 +11,8 @@ floralwhite
 
 /* * {
     border: 0.1em solid rgb(216, 158, 158);
-}
-
+} */
+/*
 *,
 *:after,
 *:before {
@@ -22,13 +22,15 @@ floralwhite
 } */
 
 /* GENERAL */
-html, body {
-    height: 100%;
-  }
+/* html, body {
+    height: 100vh;
+    max-height: 100vh;
+  } */
 
 body {
     display: flex;
     font-family: 'Roboto', sans-serif;
+    height: 100vh;
     margin: 0em;
     text-align: center;
 }
@@ -42,6 +44,10 @@ h1, h2, h3 {
 
 h1 {
     font-size: 2.5em;
+}
+
+h2 {
+    text-transform: uppercase;
 }
 
 h3 {
@@ -89,18 +95,23 @@ h3 {
 
 .game-mode:hover {
     border-color: #e9c46a;
-    box-shadow: 0px 0.5em 0.5em -0.4em #e9c46a;
+    box-shadow: 0 0.5em 0.5em -0.4em #e9c46a;
     transform: translateY(-0.25em);
+}
+
+.token{
+    font-size: 4em;
+    margin-bottom: 0.25em;
 }
 
 #classic {
     background-color: #e9c46a;
-    border: 0.1em solid floralwhite;
+    border: 0.1em solid #fffaf0aa;
 }
 
 #challenge {
     background-color: #f4a261;
-    border: 0.1em solid floralwhite;
+    border: 0.1em solid #fffaf0aa;
 }
 
 /* GAME VIEWS */
@@ -113,14 +124,20 @@ img {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin: 5em;
+    margin-top: 3em;
 }
 
 .character {
-    /* background-color: rgb(128, 54, 54); */
     height: 13em;
     margin: 1.5em;
     width: 13em;
+}
+
+.character:hover {
+    border-color: #e9c46a;
+    box-shadow: 0 1.2em 0.6em -0.8em #e9c46a;
+    transform: translateY(-0.25em);
+    border-radius: 5%;
 }
 
 /* PLAYER & COMPUTER BARS */
@@ -139,7 +156,7 @@ button {
     color: #f4a261;
     cursor: crosshair;
     font-size: 1em;
-    margin: 30.5em 0 0 2.5em;
+    margin: 18em 0 0 2.5em;
     padding: 1em 2em;
     transition: all 0.25s;
     width: 8em;

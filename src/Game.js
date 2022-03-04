@@ -1,33 +1,41 @@
 class Game {
     constructor(gameType) {
-        this.gameType = gameType;
-        this.human = new Player('Human', 'X');
-        this.computer = new Player('Computer', 'Y');
+        this.gameType = gameType || '';
+        this.human = new Player('Human', '👨🏽‍🚀');
+        this.computer = new Player('Computer', '🤖');
     }
 
-    checkWinConditions(humanChoice, computerChoice){
+    checkWinConditions() {
         // Character array - either classic or challenge
         var characters = characterOption[this.gameType];
         // Check for draw
+        var humanChoice = this.human.characterChoice.name;
+        var computerChoice = this.computer.characterChoice.name;
+        
         if (humanChoice === computerChoice) {
-            return 'DRAW!';
+            return 'draw!';
         } 
         // Determine outcome
         for (var i = 0; i < characters.length; i++) {
             if(humanChoice === characters[i].name) {
                 if (characters[i].weakness.includes(computerChoice)) {
                     this.computer.wins++;
-                    return 'YOU LOSE!';
+                    return `${this.computer.token} ${this.computer.name} wins this round! ${this.computer.token}`;
                 } else {
                     this.human.wins++;
-                    return 'YOU WIN!';
+                    return `${this.human.token} ${this.human.name} wins this round! ${this.human.token}`;
                 }
             }
         }
     }
 
-    resetGame(){
-        this.human.wins = 0;
-        this.computer.wins = 0;
+    resetBoard(characters) {
+        setTimeout(() => {loadCharacters(characters)}, 2000);
+        this.updateScores();
+    }
+
+    updateScores() {
+        humanScore.innerText = this.human.wins;
+        computerScore.innerText = this.computer.wins;
     }
 }

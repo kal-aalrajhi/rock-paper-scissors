@@ -1,15 +1,23 @@
-// Player methods must include, but are not limited to:
-// constructor - properties should include: name (ex: 'Human'), token (ex: '👩🏻'), wins (ex: 0)
-// takeTurn
 class Player {
     constructor(name, token) {
         this.name = name;
         this.token = token;
         this.wins = 0;
-        this.choice = "";
+        this.characterChoice = {};
     }
 
-    // takeTurn() {
-    //     // 
-    // }
+    takeTurn(event, characters) {
+        for (var i = 0; i < characters.length; i++) {
+            if (event.target.id === characters[i].name) {
+                this.characterChoice = characters[i];
+                return this.characterChoice;
+            }
+        }
+    }
+
+    takeRandomTurn(characters) {
+        var randIdx = Math.floor(Math.random() * characters.length);
+        this.characterChoice = characters[randIdx];
+        return this.characterChoice;
+    }
 }
