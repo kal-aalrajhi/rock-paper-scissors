@@ -56,11 +56,6 @@ h3 {
     text-transform: uppercase;
 }
 
-p {
-    font-size: 4em;
-    margin-bottom: 0.25em;
-}
-
 .game-mode h3 {
     background-color: #e76f51;
     margin: 0em 0em;
@@ -100,18 +95,23 @@ p {
 
 .game-mode:hover {
     border-color: #e9c46a;
-    box-shadow: 0px 0.5em 0.5em -0.4em #e9c46a;
+    box-shadow: 0 0.5em 0.5em -0.4em #e9c46a;
     transform: translateY(-0.25em);
+}
+
+.token{
+    font-size: 4em;
+    margin-bottom: 0.25em;
 }
 
 #classic {
     background-color: #e9c46a;
-    border: 0.1em solid floralwhite;
+    border: 0.1em solid #fffaf0aa;
 }
 
 #challenge {
     background-color: #f4a261;
-    border: 0.1em solid floralwhite;
+    border: 0.1em solid #fffaf0aa;
 }
 
 /* GAME VIEWS */
@@ -128,10 +128,16 @@ img {
 }
 
 .character {
-    /* background-color: rgb(128, 54, 54); */
     height: 13em;
     margin: 1.5em;
     width: 13em;
+}
+
+.character:hover {
+    border-color: #e9c46a;
+    box-shadow: 0 1.2em 0.6em -0.8em #e9c46a;
+    transform: translateY(-0.25em);
+    border-radius: 5%;
 }
 
 /* PLAYER & COMPUTER BARS */
