@@ -1,6 +1,6 @@
 class Game {
     constructor(gameType) {
-        this.gameType = gameType;
+        this.gameType = gameType || '';
         this.human = new Player('Human', '👨🏽‍🚀');
         this.computer = new Player('Computer', '🤖');
     }
@@ -31,12 +31,11 @@ class Game {
 
     resetBoard(characters) {
         setTimeout(() => {loadCharacters(characters)}, 2000);
-        humanScore.innerText = this.human.wins;
-        computerScore.innerText = this.computer.wins;
+        this.updateScores();
     }
 
-    resetScores() {
-        this.human.wins = 0;
-        this.computer.wins = 0;
+    updateScores() {
+        humanScore.innerText = this.human.wins;
+        computerScore.innerText = this.computer.wins;
     }
 }

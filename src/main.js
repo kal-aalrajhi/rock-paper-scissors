@@ -2,7 +2,7 @@
 var backButton = document.querySelector('#backButton');
 var characterOptions = document.querySelector('#characterOptions');
 var computerScore = document.querySelector('#computerScore');
-var currentGame = "";
+var currentGame = new Game;
 var gameModesSection = document.querySelector('#gameModes');
 var humanScore = document.querySelector('#humanScore');
 var humanSide = document.querySelector('#humanSide');
@@ -49,7 +49,6 @@ function loadCharacters(characters) {
 function loadGameTypes() {
     subtitle.innerHTML = "choose your game type";
     characterOptions.innerHTML = "";
-    currentGame.resetScores();
     hideElement(characterOptions);
     hideElement(backButton);
     unhideElement(gameModesSection);
@@ -57,9 +56,9 @@ function loadGameTypes() {
 
 function pickGameMode(event) {
     if (event.target.id === 'classic') {
-        currentGame = new Game('classic');
+        currentGame.gameType = ('classic');
     } else if (event.target.id === 'challenge'){
-        currentGame = new Game('challenge');
+        currentGame.gameType = ('challenge');
     } else {
         return;
     }
