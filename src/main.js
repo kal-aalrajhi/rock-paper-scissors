@@ -72,3 +72,5 @@ function hideElement(elementToHide) {
 function unhideElement(elementToUnhide) {
     elementToUnhide.classList.remove('hidden');
 }
+
+// console.log(currentGame.computer.wins);

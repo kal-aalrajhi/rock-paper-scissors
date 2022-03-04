@@ -20,4 +20,8 @@ class Player {
         this.characterChoice = characters[randIdx];
         return this.characterChoice;
     }
+
+    saveWinsToStorage() {
+        localStorage.setItem(`${this.name}Storage`, this.wins);
+    }
 }
