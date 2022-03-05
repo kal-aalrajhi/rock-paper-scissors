@@ -1,8 +1,8 @@
 class Game {
     constructor(gameType) {
         this.gameType = gameType || '';
-        this.human = new Player('Human', '👨🏽‍🚀');
-        this.computer = new Player('Computer', '🤖');
+        this.human = new Player('human', '👨🏽‍🚀');
+        this.computer = new Player('computer', '🤖');
     }
 
     checkWinConditions() {
@@ -35,7 +35,16 @@ class Game {
     }
 
     updateScores() {
+        this.human.saveWinsToStorage();
+        this.computer.saveWinsToStorage();
         humanScore.innerText = this.human.wins;
         computerScore.innerText = this.computer.wins;
+    }
+
+    resetScores() {
+        this.human.wins = 0;
+        this.computer.wins = 0;
+        localStorage.clear();
+        this.updateScores();
     }
 }

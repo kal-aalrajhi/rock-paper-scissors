@@ -27,6 +27,8 @@ floralwhite
     max-height: 100vh;
   } */
 
+
+/* overscroll-behavior-y: none; */
 body {
     display: flex;
     font-family: 'Roboto', sans-serif;
