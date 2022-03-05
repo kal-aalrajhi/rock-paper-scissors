@@ -28,7 +28,7 @@ class Game {
 
     resetBoard(characters) {
         characterOptions.removeEventListener('click', chooseCharacter);
-        setTimeout(() => {loadCharacters(characters)}, 2000);
+        setTimeout(() => {loadCharacters(characters)}, 1800);
         setTimeout(() => {characterOptions.addEventListener('click', chooseCharacter)}, 2000);
         this.updateScores();
     }

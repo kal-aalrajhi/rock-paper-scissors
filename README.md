@@ -1,6 +1,6 @@
 # Rock, Paper, Scissors
 
-<img width="500" alt="Rock, Paper, Scissors Project" src="">
+<img width="500" alt="Rock, Paper, Scissors Project" src="https://i.imgur.com/sBzSSgp.png">
 
 ## Table of Contents
 
@@ -16,9 +16,9 @@
   - [Project GitHub Repo](#project-github-repo)
 
 ## Introduction
-Users are encouraged to visit our **ColoRandom** page for color palette inspiration for their next project. They can generate a completely random palette of five colors at a time, or save their desired colors and refresh the random colors of their choice around these saved options. All saved palettes will be shown in a sidebar for users to review as wished.
+Users are encouraged to visit **Rock Paper Scissors** page to play the best thing since **kick the can**! The characters are a little differrent from classic **rock, paper, scissors**, but the game is essentially the same! User play the role of a 'human' playing against a computer, which randomly chooses it's character. There is a classic mode (3 characters) and a challenge mode (5 characters). Moreover, user and computer wins persist until the user chooses to clear the scores.
 
-This project was assigned as a part of Turing School of Software and Design's Front-End program, students had one week to complete it.
+This project was assigned as a part of Turing School of Software and Design's Front-End program, students had about a week to complete it. 
 
 ## Technologies
   - Javascript 
@@ -28,16 +28,16 @@ This project was assigned as a part of Turing School of Software and Design's Fr
     - Flexbox
 
 ## Features
-- When a user initially opens the page, they'll see five random colors with their associated hexcodes, an empty **Saved Palettes** section, and two buttons labeled **New Palette** and **Save Palette**.
-- To generate a completely new palette, the user can click **New Palette**. Five new colors will be displayed on the main screen.
-- From there, the user can click on a color that they like to *lock* that color in place. Now, when they generate a new palette, every color except those that are locked will change. Clicking on a color again will *unlock* a locked color. (This is visually demonstrated with an unlocked or locked icon below each color.)
-- When a user has a collection of colors that they're happy with, clicking **Save Palette** will move this palette into the Saved Palettes section. They can choose to remove any palette from this section by clicking the trash icon next to the appropriate palette.
-
-- Game score persists even on refresh
-- Reset score (resets local storage too)
+- When a user initially opens the page, they'll see a game screen where users are encouraged to choose **classic** or **challenge* mode. Each mode has its set of rules displayed. This bag is also book-ended by each respective player's stat bars which display their token, name, and score.
+- When **classic** mode is selected, the user will be taken to another view where 3 character options are displayed. The options are guitar, toilet-paper and swords. 
+    - When a character is selected, another view is displayed simulating the 'battle'. The user's choice is compared to the randomly generated computer's choice. The user is prompted to how the comparison resolves - which is either as **win**, **lose**, or **draw**.
+    - From there, the user is returned to the character selection view and they can continue to play in classic mode or go back to the game mode selection view.
+- When **challenge** mode is selected, the user will be taken to another view where 5 character options are displayed. The options are guitar, toilet-paper, swords, ninja, and robot. This view has the same subfeatures as the classic view.
+- Game score persists, even on refresh.
+- A reset button is available to reset all the scores (this resets the scores in local storage).
 
 ## Page Demo
-![Example of button functionality](https://media.giphy.com/media/YJ4jzH6DEZWkzvHl38/giphy.gif)
+![Example of game functionality](https://media.giphy.com/media/N2Tmsu9gAHTteBTaLN/giphy.gif)
 
 ## Possible Future Extensions
 - Allow users to replace 'human' with their name and preferred token
