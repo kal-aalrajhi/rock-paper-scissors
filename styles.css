@@ -1,5 +1,5 @@
+/* COLORS */
 /* 
-COLORS
 #264653
 #2a9d8f
 #e9c46a
@@ -8,52 +8,38 @@ COLORS
 ghostwhite
 floralwhite
 */
-
-/* * {
-    border: 0.1em solid rgb(216, 158, 158);
-} */
-/*
-*,
-*:after,
-*:before {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-} */
+* {
+    border-color: red;
+}
 
 /* GENERAL */
-/* html, body {
-    height: 100vh;
-    max-height: 100vh;
-  } */
-
-
-/* overscroll-behavior-y: none; */
 body {
     display: flex;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Indie Flower', sans-serif;
     height: 100vh;
     margin: 0em;
+    overscroll-behavior-y: none;
     text-align: center;
 }
 
 /* TEXT */
-h1, h2, h3 {
+h1 {
     color: ghostwhite;
+    font-size: 3.5em;
     margin: 0.5em 0em;
     text-transform: capitalize;
 }
 
-h1 {
-    font-size: 2.5em;
-}
-
 h2 {
+    color: ghostwhite;
+    font-size: 1.7em;
+    margin: 0 0 0.2em 0;
     text-transform: uppercase;
 }
 
 h3 {
     color: floralwhite;
+    font-size: 1.3em;
     margin-top: 1em;
     text-transform: uppercase;
 }
@@ -61,10 +47,24 @@ h3 {
 .game-mode h3 {
     background-color: #e76f51;
     margin: 0em 0em;
-    padding: 1em;
+    padding: 0.5em;
 }
 
 /* MAIN VIEW */
+ul {
+    color: floralwhite;
+    font-size: 1.2em;
+    letter-spacing: 0.10em;
+    list-style-type: none;
+    margin: 0;
+    margin-top: 0.5em;
+}
+
+.emphasize-text {
+    color: #e76f51;
+    font-size: 1.3em;
+}
+
 .center-bar {
     background-color: #2a9d8f;
     border-left: 0.2em solid #26465350;
@@ -76,12 +76,10 @@ h3 {
 }
 
 .game-title {
-    /* background-color: red; */
     flex-basis: 15%;
 }
 
 .game-mode-subscreen{
-    /* background-color: blue; */
     align-items: center;
     display: flex;
     flex-basis: 85%;
@@ -90,6 +88,8 @@ h3 {
 }
 
 .game-mode {
+    background-color: #e9c46a;
+    border: 0.1em solid #fffaf0aa;
     cursor: crosshair;
     height: 14em;
     width: 40em;
@@ -97,42 +97,50 @@ h3 {
 
 .game-mode:hover {
     border-color: #e9c46a;
-    box-shadow: 0 0.5em 0.5em -0.4em #e9c46a;
+    box-shadow: 0 0.7em 0.5em -0.4em #e9c46a77;
     transform: translateY(-0.25em);
 }
 
-.token{
+.score-count {
+    font-size: 1.5em;
+}
+
+.side-bar {
+    background-color: #264653;
+    display: flex;
+    flex-basis: 25%;
+    flex-direction: column;
+    padding: 0.1em;
+}
+
+.token {
     font-size: 4em;
     margin-bottom: 0.25em;
 }
 
-#classic {
-    background-color: #e9c46a;
-    border: 0.1em solid #fffaf0aa;
-}
-
-#challenge {
+.challenge-mode {
     background-color: #f4a261;
     border: 0.1em solid #fffaf0aa;
 }
 
-/* GAME VIEWS */
+/* GAME-TYPE VIEW */
 img {
-    height: 13em;
-    width: 13em;
+    height: 12em;
+    width: 12em;
 }
 
 .characters-subscreen {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: 3em;
+    margin-top: 1em;
 }
 
 .character {
-    height: 13em;
-    margin: 1.5em;
-    width: 13em;
+    cursor: crosshair;
+    height: 12em;
+    margin: 1em;
+    width: 12em;
 }
 
 .character:hover {
@@ -142,23 +150,15 @@ img {
     border-radius: 5%;
 }
 
-/* PLAYER & COMPUTER BARS */
-.side-bar {
-    background-color: #264653;
-    display: flex;
-    flex-basis: 25%;
-    flex-direction: column;
-    padding: 0.1em;
-}
-
 /* BUTTONS */
 button {
     background: none;
     border: 0.2em solid;
     color: #f4a261;
     cursor: crosshair;
-    font-size: 1em;
-    margin: 18em 0 0 2.5em;
+    font-family: 'Indie Flower', sans-serif;
+    font-size: 1.0em;
+    margin: 15em 0 0 2.5em;
     padding: 1em 2em;
     transition: all 0.25s;
     width: 8em;
@@ -169,6 +169,15 @@ button:hover {
     box-shadow: 0 0.4em 0.4em -0.4em #e9c46a;
     color: floralwhite;
     transform: translateY(-0.25em);
+}
+
+.reset {
+    color: #e76f51;
+    margin: 15em 0 0 4em;
+}
+
+.reset:hover {
+    color: floralwhite;
 }
 
 /* FUNCTIONALITY */

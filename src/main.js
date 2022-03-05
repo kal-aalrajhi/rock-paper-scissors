@@ -1,9 +1,11 @@
 // Global Variables
 var currentGame = new Game;
 
-// Global Selectors
+// Selectors
 var backButton = document.querySelector('#backButton');
+var challengeMode = document.querySelector('#challenge');
 var characterOptions = document.querySelector('#characterOptions');
+var classicMode = document.querySelector('#classic');
 var computerScore = document.querySelector('#computerScore');
 var gameModesSection = document.querySelector('#gameModes');
 var humanScore = document.querySelector('#humanScore');
@@ -21,58 +23,49 @@ resetScoresButton.addEventListener('click', () => {
 });
 
 backButton.addEventListener('click', loadGameTypes);
-characterOptions.addEventListener('click', characterChoice);
-gameModesSection.addEventListener('click', pickGameMode);
+challengeMode.addEventListener('click', pickGameMode);
+characterOptions.addEventListener('click', chooseCharacter);
+classicMode.addEventListener('click', pickGameMode);
 
 // Functions
-function characterChoice(event) {
-    if(event.target.id !== 'characterOptions') // avoid parent element target from running 
+function chooseCharacter(event) {
+    if(event.target.id !== 'characterOptions') 
     {
-        // Choose character
         var characters = characterOption[currentGame.gameType];
         var humanChoice = currentGame.human.takeTurn(event, characters);
         var computerChoice = currentGame.computer.takeRandomTurn(characters);
         
-        // Show results to DOM
         loadCharacters([humanChoice, computerChoice]);
         subtitle.innerText = currentGame.checkWinConditions();
-        
-        // Reset current gameboard to current set of characters
         currentGame.resetBoard(characters);
     }
 }
 
 function loadCharacters(characters) {
-    subtitle.innerHTML = "choose your character";
+    subtitle.innerHTML = 'choose your character';
     hideElement(gameModesSection);
     unhideElement(characterOptions);
     unhideElement(backButton);
     
-    characterOptions.innerHTML = "";
+    characterOptions.innerHTML = '';
     for (var i = 0; i < characters.length; i++) {
         characterOptions.innerHTML += `
         <section class='character'>
-            <img id=${characters[i].name} src=${characters[i].img} />
+            <img id=${characters[i].name} src=${characters[i].img} alt='${characters[i].name} character' />
         </section>`
     }
 }
 
 function loadGameTypes() {
-    subtitle.innerHTML = "choose your game type";
-    characterOptions.innerHTML = "";
+    subtitle.innerHTML = 'choose your game type';
+    characterOptions.innerHTML = '';
     hideElement(characterOptions);
     hideElement(backButton);
     unhideElement(gameModesSection);
 }
 
-function pickGameMode(event) {
-    if (event.target.id === 'classic') {
-        currentGame.gameType = ('classic');
-    } else if (event.target.id === 'challenge'){
-        currentGame.gameType = ('challenge');
-    } else {
-        return;
-    }
+function pickGameMode() {
+    currentGame.gameType = this.id;
     loadCharacters(characterOption[currentGame.gameType]);
 }
 

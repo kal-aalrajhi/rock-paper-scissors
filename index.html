@@ -2,8 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="./styles.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atma:wght@300&family=Indie+Flower&family=Press+Start+2P&family=Roboto+Serif:wght@100&display=swap" rel="stylesheet">
     <title>Rock Paper Scissors</title>
   </head>
   <body>
@@ -11,8 +11,8 @@
     <summary class="side-bar" id="humanSide">
       <p class="token">👨🏽‍🚀</p>
       <h2>human</h2>
-      <h3>score: <span id="humanScore">0</span></h3>
-      <button class="hidden" id="backButton">back</button>
+      <h3>score: <span class="score-count" id="humanScore">0</span></h3>
+      <button class="back hidden" id="backButton">back</button>
     </summary>
     <!-- CENTER SCREEN -->
     <main class="center-bar">
@@ -20,29 +20,26 @@
         <h1>rock, paper, scissors</h1>
         <h2 id="subtitle">choose your game type</h2>
       </section>
-      <!-- SUBSCREEN -->
+      <!-- ACTION SUBSCREEN -->
       <section class="characters-subscreen hidden" id="characterOptions">
-        <!-- respective mode characters placed here -->
       </section>
-      <!--choose game mode screen-->
       <section class="game-mode-subscreen" id="gameModes">
-        <section class="game-mode" id="classic">
+        <section class="game-mode classic-mode" id="classic">
           <h3>classic</h3>
-          <!-- <ul>
-            <li>guitar shatters swords</li>
-            <li>toilet-paper mutes guitar</li>
-            <li>swords shred toilet-paper</li>
-          </ul> -->
+          <ul class="classicRules">
+            <li>[ guitar <span class="emphasize-text">shatters</span> swords ]</li>
+            <li>[ toilet-paper <span class="emphasize-text">mutes</span> guitar ]</li>
+            <li>[ swords <span class="emphasize-text">slashes</span> toilet ]</li>
+          </ul>
         </section>
-        <section class="game-mode" id="challenge">
+        <section class="game-mode challenge-mode" id="challenge">
           <h3>challenge</h3>
-          <!-- <ul>
-            <li>guitar shatters swords and wards off ninja</li>
-            <li>toilet-paper mutes guitar and tangles robot</li>
-            <li>swords shred toilet-paper and slashes ninja</li>
-            <li>ninja cuts toilet-paper and hacks robot</li>
-            <li>robot bends swords and smashes guitar</li>
-          </ul> -->
+          <ul class="challengeRules">
+            <li>[ guitar or swords <span class="emphasize-text">shreds</span> ninja ]</li>
+            <li>[ toilet-paper <span class="emphasize-text">tangles</span> robot ]</li>
+            <li>[ ninja <span class="emphasize-text">cuts</span> toilet-paper and <span class="emphasize-text">hacks</span> robot ]</li>
+            <li>[ robot <span class="emphasize-text">bends</span> swords and <span class="emphasize-text">smashes</span> guitar ]</li>
+          </ul>
         </section>
       </section>
     </main>
@@ -50,8 +47,8 @@
     <summary class="side-bar" id="computerSide">
       <p class="token">🤖</p>
       <h2>computer</h2>
-      <h3>score: <span id="computerScore">0</span></h3>
-      <button id="resetScoresButton">reset scores</button>
+      <h3>score: <span class="score-count" id="computerScore">0</span></h3>
+      <button class="reset" id="resetScoresButton">reset</button>
     </summary>
     <script type="text/javascript" src="./src/data.js"></script>
     <script type="text/javascript" src="./src/player.js"></script>

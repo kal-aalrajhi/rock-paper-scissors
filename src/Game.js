@@ -6,16 +6,13 @@ class Game {
     }
 
     checkWinConditions() {
-        // Character array - either classic or challenge
         var characters = characterOption[this.gameType];
-        // Check for draw
         var humanChoice = this.human.characterChoice.name;
         var computerChoice = this.computer.characterChoice.name;
         
         if (humanChoice === computerChoice) {
-            return 'draw!';
+            return 'draw!!!';
         } 
-        // Determine outcome
         for (var i = 0; i < characters.length; i++) {
             if(humanChoice === characters[i].name) {
                 if (characters[i].weakness.includes(computerChoice)) {
@@ -30,9 +27,13 @@ class Game {
     }
 
     resetBoard(characters) {
-        characterOptions.removeEventListener('click', characterChoice);
-        setTimeout(() => {loadCharacters(characters)}, 2000);
-        setTimeout(() => {characterOptions.addEventListener('click', characterChoice)}, 2000);
+        characterOptions.removeEventListener('click', chooseCharacter);
+        backButton.disabled = true;
+        resetScoresButton.disabled = true;
+        setTimeout(() => {loadCharacters(characters)}, 1800);
+        setTimeout(() => {characterOptions.addEventListener('click', chooseCharacter)}, 1800);
+        setTimeout(() => {backButton.disabled = false}, 1800);
+        setTimeout(() => {resetScoresButton.disabled = false}, 1800);
         this.updateScores();
     }
 
