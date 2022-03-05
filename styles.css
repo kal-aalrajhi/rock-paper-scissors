@@ -8,6 +8,9 @@
 ghostwhite
 floralwhite
 */
+* {
+    border-color: red;
+}
 
 /* GENERAL */
 body {
@@ -29,14 +32,14 @@ h1 {
 
 h2 {
     color: ghostwhite;
-    font-size: 2em;
-    margin: 0.5em 0em;
+    font-size: 1.7em;
+    margin: 0 0 0.2em 0;
     text-transform: uppercase;
 }
 
 h3 {
     color: floralwhite;
-    font-size: 1.5em;
+    font-size: 1.3em;
     margin-top: 1em;
     text-transform: uppercase;
 }
@@ -85,6 +88,8 @@ ul {
 }
 
 .game-mode {
+    background-color: #e9c46a;
+    border: 0.1em solid #fffaf0aa;
     cursor: crosshair;
     height: 14em;
     width: 40em;
@@ -92,7 +97,7 @@ ul {
 
 .game-mode:hover {
     border-color: #e9c46a;
-    box-shadow: 0 0.7em 0.5em -0.4em #e9c46a;
+    box-shadow: 0 0.7em 0.5em -0.4em #e9c46a77;
     transform: translateY(-0.25em);
 }
 
@@ -113,33 +118,29 @@ ul {
     margin-bottom: 0.25em;
 }
 
-#classic {
-    background-color: #e9c46a;
-    border: 0.1em solid #fffaf0aa;
-}
-
-#challenge {
+.challenge-mode {
     background-color: #f4a261;
     border: 0.1em solid #fffaf0aa;
 }
 
 /* GAME-TYPE VIEW */
 img {
-    height: 13em;
-    width: 13em;
+    height: 12em;
+    width: 12em;
 }
 
 .characters-subscreen {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: 3em;
+    margin-top: 1em;
 }
 
 .character {
-    height: 13em;
-    margin: 1.5em;
-    width: 13em;
+    cursor: crosshair;
+    height: 12em;
+    margin: 1em;
+    width: 12em;
 }
 
 .character:hover {
@@ -157,7 +158,7 @@ button {
     cursor: crosshair;
     font-family: 'Indie Flower', sans-serif;
     font-size: 1.0em;
-    margin: 18em 0 0 2.5em;
+    margin: 15em 0 0 2.5em;
     padding: 1em 2em;
     transition: all 0.25s;
     width: 8em;
@@ -170,12 +171,12 @@ button:hover {
     transform: translateY(-0.25em);
 }
 
-#resetScoresButton {
+.reset {
     color: #e76f51;
-    margin: 18em 0 0 4em;
+    margin: 15em 0 0 4em;
 }
 
-#resetScoresButton:hover {
+.reset:hover {
     color: floralwhite;
 }
 

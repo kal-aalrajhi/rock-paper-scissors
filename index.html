@@ -12,7 +12,7 @@
       <p class="token">👨🏽‍🚀</p>
       <h2>human</h2>
       <h3>score: <span class="score-count" id="humanScore">0</span></h3>
-      <button class="hidden" id="backButton">back</button>
+      <button class="back hidden" id="backButton">back</button>
     </summary>
     <!-- CENTER SCREEN -->
     <main class="center-bar">
@@ -24,17 +24,17 @@
       <section class="characters-subscreen hidden" id="characterOptions">
       </section>
       <section class="game-mode-subscreen" id="gameModes">
-        <section class="game-mode" id="classic">
+        <section class="game-mode classic-mode" id="classic">
           <h3>classic</h3>
-          <ul id="classicRules">
+          <ul class="classicRules">
             <li>[ guitar <span class="emphasize-text">shatters</span> swords ]</li>
             <li>[ toilet-paper <span class="emphasize-text">mutes</span> guitar ]</li>
             <li>[ swords <span class="emphasize-text">slashes</span> toilet ]</li>
           </ul>
         </section>
-        <section class="game-mode" id="challenge">
+        <section class="game-mode challenge-mode" id="challenge">
           <h3>challenge</h3>
-          <ul id="challengeRules">
+          <ul class="challengeRules">
             <li>[ guitar or swords <span class="emphasize-text">shreds</span> ninja ]</li>
             <li>[ toilet-paper <span class="emphasize-text">tangles</span> robot ]</li>
             <li>[ ninja <span class="emphasize-text">cuts</span> toilet-paper and <span class="emphasize-text">hacks</span> robot ]</li>
@@ -48,7 +48,7 @@
       <p class="token">🤖</p>
       <h2>computer</h2>
       <h3>score: <span class="score-count" id="computerScore">0</span></h3>
-      <button id="resetScoresButton">reset</button>
+      <button class="reset" id="resetScoresButton">reset</button>
     </summary>
     <script type="text/javascript" src="./src/data.js"></script>
     <script type="text/javascript" src="./src/player.js"></script>
