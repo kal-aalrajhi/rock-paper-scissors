@@ -51,7 +51,7 @@ function loadCharacters(characters) {
     for (var i = 0; i < characters.length; i++) {
         characterOptions.innerHTML += `
         <section class='character'>
-            <img id=${characters[i].name} src=${characters[i].img} />
+            <img id=${characters[i].name} src=${characters[i].img} alt='${characters[i].name} character' />
         </section>`
     }
 }
