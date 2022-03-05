@@ -59,12 +59,10 @@ h3 {
 }
 
 .game-title {
-    /* background-color: red; */
     flex-basis: 15%;
 }
 
 .game-mode-subscreen{
-    /* background-color: blue; */
     align-items: center;
     display: flex;
     flex-basis: 85%;

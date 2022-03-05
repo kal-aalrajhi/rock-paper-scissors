@@ -6,16 +6,13 @@ class Game {
     }
 
     checkWinConditions() {
-        // Character array - either classic or challenge
         var characters = characterOption[this.gameType];
-        // Check for draw
         var humanChoice = this.human.characterChoice.name;
         var computerChoice = this.computer.characterChoice.name;
         
         if (humanChoice === computerChoice) {
-            return 'draw!';
+            return 'draw!!!';
         } 
-        // Determine outcome
         for (var i = 0; i < characters.length; i++) {
             if(humanChoice === characters[i].name) {
                 if (characters[i].weakness.includes(computerChoice)) {
