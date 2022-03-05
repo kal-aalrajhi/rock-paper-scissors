@@ -42,6 +42,8 @@ class Game {
     }
 
     resetScores() {
+        this.human.wins = 0;
+        this.computer.wins = 0;
         localStorage.clear();
         this.updateScores();
     }
