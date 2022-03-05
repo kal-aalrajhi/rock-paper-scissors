@@ -42,12 +42,12 @@ function chooseCharacter(event) {
 }
 
 function loadCharacters(characters) {
-    subtitle.innerHTML = "choose your character";
+    subtitle.innerHTML = 'choose your character';
     hideElement(gameModesSection);
     unhideElement(characterOptions);
     unhideElement(backButton);
     
-    characterOptions.innerHTML = "";
+    characterOptions.innerHTML = '';
     for (var i = 0; i < characters.length; i++) {
         characterOptions.innerHTML += `
         <section class='character'>
@@ -57,8 +57,8 @@ function loadCharacters(characters) {
 }
 
 function loadGameTypes() {
-    subtitle.innerHTML = "choose your game type";
-    characterOptions.innerHTML = "";
+    subtitle.innerHTML = 'choose your game type';
+    characterOptions.innerHTML = '';
     hideElement(characterOptions);
     hideElement(backButton);
     unhideElement(gameModesSection);
