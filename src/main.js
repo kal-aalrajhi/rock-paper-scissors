@@ -1,13 +1,13 @@
 // Global Variables
 var currentGame = new Game;
 
-// Global Selectors
+// Selectors
 var backButton = document.querySelector('#backButton');
+var challengeMode = document.querySelector('#challenge');
 var characterOptions = document.querySelector('#characterOptions');
+var classicMode = document.querySelector('#classic');
 var computerScore = document.querySelector('#computerScore');
 var gameModesSection = document.querySelector('#gameModes');
-var challengeMode = document.querySelector('#challenge');
-var classicMode = document.querySelector('#classic');
 var humanScore = document.querySelector('#humanScore');
 var humanSide = document.querySelector('#humanSide');
 var resetScoresButton = document.querySelector('#resetScoresButton');
@@ -23,8 +23,8 @@ resetScoresButton.addEventListener('click', () => {
 });
 
 backButton.addEventListener('click', loadGameTypes);
-characterOptions.addEventListener('click', chooseCharacter);
 challengeMode.addEventListener('click', pickGameMode);
+characterOptions.addEventListener('click', chooseCharacter);
 classicMode.addEventListener('click', pickGameMode);
 
 // Functions
