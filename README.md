@@ -30,8 +30,10 @@ This project was assigned as a part of Turing School of Software and Design's Fr
 ## Features
 - When a user initially opens the page, they'll see a game screen where users are encouraged to choose **classic** or **challenge* mode. Each mode has its set of rules displayed. This bag is also book-ended by each respective player's stat bars which display their token, name, and score.
 - When **classic** mode is selected, the user will be taken to another view where 3 character options are displayed. The options are guitar, toilet-paper and swords. 
-    - When a character is selected, another view is displayed simulating the 'battle'. The user's choice is displayed and compared to the randomly generated computer's choice (users cannot select characters during the 'battle cutscene'). The user is prompted to how the comparison resolves - which is either as **win**, **lose**, or **draw**.
+    - When a character is selected, another view is displayed simulating the 'battle'. The user's choice is displayed and compared to the randomly generated computer's choice. The user is prompted to how the comparison resolves - which is either as **win**, **lose**, or **draw**.
     - From there, the user is returned to the character selection view and they can continue to play in classic mode or go back to the game mode selection view.
+    - Users are prevented from selecting characters during the 'battle cutscene'.
+    - The **back** and **reset** buttons are also disabled during the 'battle cutscene'.
 - When **challenge** mode is selected, the user will be taken to another view where 5 character options are displayed. The options are guitar, toilet-paper, swords, ninja, and robot. This view has the same subfeatures as the classic view.
 - Game score persists, even on refresh.
 - A reset button is available to reset all the scores (this resets the scores in local storage).

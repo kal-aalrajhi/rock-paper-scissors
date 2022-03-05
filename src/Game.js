@@ -28,8 +28,12 @@ class Game {
 
     resetBoard(characters) {
         characterOptions.removeEventListener('click', chooseCharacter);
+        backButton.disabled = true;
+        resetScoresButton.disabled = true;
         setTimeout(() => {loadCharacters(characters)}, 1800);
-        setTimeout(() => {characterOptions.addEventListener('click', chooseCharacter)}, 2000);
+        setTimeout(() => {characterOptions.addEventListener('click', chooseCharacter)}, 1800);
+        setTimeout(() => {backButton.disabled = false}, 1800);
+        setTimeout(() => {resetScoresButton.disabled = false}, 1800);
         this.updateScores();
     }
 
