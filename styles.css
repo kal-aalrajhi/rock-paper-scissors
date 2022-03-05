@@ -31,29 +31,30 @@ floralwhite
 /* overscroll-behavior-y: none; */
 body {
     display: flex;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Indie Flower', sans-serif;
     height: 100vh;
     margin: 0em;
     text-align: center;
 }
 
 /* TEXT */
-h1, h2, h3 {
+h1 {
     color: ghostwhite;
+    font-size: 3.5em;
     margin: 0.5em 0em;
     text-transform: capitalize;
 }
 
-h1 {
-    font-size: 2.5em;
-}
-
 h2 {
+    color: ghostwhite;
+    font-size: 2em;
+    margin: 0.5em 0em;
     text-transform: uppercase;
 }
 
 h3 {
     color: floralwhite;
+    font-size: 1.5em;
     margin-top: 1em;
     text-transform: uppercase;
 }
@@ -61,7 +62,7 @@ h3 {
 .game-mode h3 {
     background-color: #e76f51;
     margin: 0em 0em;
-    padding: 1em;
+    padding: 0.5em;
 }
 
 /* MAIN VIEW */
@@ -97,8 +98,12 @@ h3 {
 
 .game-mode:hover {
     border-color: #e9c46a;
-    box-shadow: 0 0.5em 0.5em -0.4em #e9c46a;
+    box-shadow: 0 0.7em 0.5em -0.4em #e9c46a;
     transform: translateY(-0.25em);
+}
+
+.score-count {
+    font-size: 1.5em;
 }
 
 .token{
@@ -157,7 +162,8 @@ button {
     border: 0.2em solid;
     color: #f4a261;
     cursor: crosshair;
-    font-size: 1em;
+    font-family: 'Indie Flower', sans-serif;
+    font-size: 1.0em;
     margin: 18em 0 0 2.5em;
     padding: 1em 2em;
     transition: all 0.25s;
@@ -169,6 +175,15 @@ button:hover {
     box-shadow: 0 0.4em 0.4em -0.4em #e9c46a;
     color: floralwhite;
     transform: translateY(-0.25em);
+}
+
+#resetScoresButton {
+    color: #e76f51;
+    margin: 18em 0 0 4em;
+}
+
+#resetScoresButton:hover {
+    color: floralwhite;
 }
 
 /* FUNCTIONALITY */
