@@ -37,7 +37,6 @@ function chooseCharacter(event) {
         
         loadCharacters([humanChoice, computerChoice]);
         subtitle.innerText = currentGame.checkWinConditions();
-        
         currentGame.resetBoard(characters);
     }
 }
