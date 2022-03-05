@@ -6,6 +6,8 @@ var backButton = document.querySelector('#backButton');
 var characterOptions = document.querySelector('#characterOptions');
 var computerScore = document.querySelector('#computerScore');
 var gameModesSection = document.querySelector('#gameModes');
+var challengeMode = document.querySelector('#challenge');
+var classicMode = document.querySelector('#classic');
 var humanScore = document.querySelector('#humanScore');
 var humanSide = document.querySelector('#humanSide');
 var resetScoresButton = document.querySelector('#resetScoresButton');
@@ -21,11 +23,12 @@ resetScoresButton.addEventListener('click', () => {
 });
 
 backButton.addEventListener('click', loadGameTypes);
-characterOptions.addEventListener('click', characterChoice);
-gameModesSection.addEventListener('click', pickGameMode);
+characterOptions.addEventListener('click', chooseCharacter);
+challengeMode.addEventListener('click', pickGameMode);
+classicMode.addEventListener('click', pickGameMode);
 
 // Functions
-function characterChoice(event) {
+function chooseCharacter(event) {
     if(event.target.id !== 'characterOptions') 
     {
         var characters = characterOption[currentGame.gameType];
@@ -62,14 +65,8 @@ function loadGameTypes() {
     unhideElement(gameModesSection);
 }
 
-function pickGameMode(event) {
-    if (event.target.id === 'classic') {
-        currentGame.gameType = ('classic');
-    } else if (event.target.id === 'challenge'){
-        currentGame.gameType = ('challenge');
-    } else {
-        return;
-    }
+function pickGameMode() {
+    currentGame.gameType = this.id;
     loadCharacters(characterOption[currentGame.gameType]);
 }
 
