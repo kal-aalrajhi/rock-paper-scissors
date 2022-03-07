@@ -125,8 +125,8 @@ ul {
 
 /* GAME-TYPE VIEW */
 img {
-    height: 12em;
-    width: 12em;
+    height: 13em;
+    width: 13em;
 }
 
 .characters-subscreen {
@@ -138,9 +138,9 @@ img {
 
 .character {
     cursor: crosshair;
-    height: 12em;
+    height: 14em;
     margin: 1em;
-    width: 12em;
+    width: 14em;
 }
 
 .character:hover {

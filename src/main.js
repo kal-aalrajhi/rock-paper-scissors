@@ -43,15 +43,20 @@ function chooseCharacter(event) {
 
 function loadCharacters(characters) {
     subtitle.innerHTML = 'choose your character';
+    characterOptions.innerHTML = '';
     hideElement(gameModesSection);
     unhideElement(characterOptions);
     unhideElement(backButton);
     
-    characterOptions.innerHTML = '';
+    var playerTokens = [currentGame.human.token, currentGame.computer.token];
     for (var i = 0; i < characters.length; i++) {
+        if (characters.length > 2) {
+            playerTokens[i] = '';
+        }
         characterOptions.innerHTML += `
         <section class='character'>
             <img id=${characters[i].name} src=${characters[i].img} alt='${characters[i].name} character' />
+            <p class='token'>${playerTokens[i]}</p>
         </section>`
     }
 }
