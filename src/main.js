@@ -32,7 +32,7 @@ function chooseCharacter(event) {
     if(event.target.id !== 'characterOptions') 
     {
         var characters = characterOption[currentGame.gameType];
-        var humanChoice = currentGame.human.takeTurn(event, characters);
+        var humanChoice = currentGame.human.takeTurn(event.target.id, characters);
         var computerChoice = currentGame.computer.takeRandomTurn(characters);
         
         loadCharacters([humanChoice, computerChoice]);
