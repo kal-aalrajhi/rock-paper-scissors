@@ -47,7 +47,6 @@ function loadCharacters(characters) {
     hideElement(gameModesSection);
     unhideElement(characterOptions);
     unhideElement(backButton);
-    
     var playerTokens = [currentGame.human.token, currentGame.computer.token];
     characters.forEach((character, idx) => {
         if (characters.length > 2) {
