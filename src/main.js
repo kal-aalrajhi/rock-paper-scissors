@@ -32,7 +32,7 @@ function chooseCharacter(event) {
     if(event.target.id !== 'characterOptions') 
     {
         var characters = characterOption[currentGame.gameType];
-        var humanChoice = currentGame.human.takeTurn(event, characters);
+        var humanChoice = currentGame.human.takeTurn(event.target.id, characters);
         var computerChoice = currentGame.computer.takeRandomTurn(characters);
         
         loadCharacters([humanChoice, computerChoice]);
@@ -47,18 +47,17 @@ function loadCharacters(characters) {
     hideElement(gameModesSection);
     unhideElement(characterOptions);
     unhideElement(backButton);
-    
     var playerTokens = [currentGame.human.token, currentGame.computer.token];
-    for (var i = 0; i < characters.length; i++) {
+    characters.forEach((character, idx) => {
         if (characters.length > 2) {
-            playerTokens[i] = '';
+            playerTokens[idx] = '';
         }
         characterOptions.innerHTML += `
         <section class='character'>
-            <img id=${characters[i].name} src=${characters[i].img} alt='${characters[i].name} character' />
-            <p class='token'>${playerTokens[i]}</p>
+            <img id=${character.name} src=${character.img} alt='${character.name} character' />
+            <p class='token'>${playerTokens[idx]}</p>
         </section>`
-    }
+    });
 }
 
 function loadGameTypes() {

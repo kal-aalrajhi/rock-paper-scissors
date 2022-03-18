@@ -6,9 +6,9 @@ class Player {
         this.characterChoice = {};
     }
 
-    takeTurn(event, characters) {
+    takeTurn(choice, characters) {
         for (var i = 0; i < characters.length; i++) {
-            if (event.target.id === characters[i].name) {
+            if (choice === characters[i].name) {
                 this.characterChoice = characters[i];
                 return this.characterChoice;
             }
