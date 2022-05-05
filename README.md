@@ -64,3 +64,6 @@ This project was assigned as a part of Turing School of Software and Design's Fr
 
 ## Project GitHub Repo
 - The project repo can be found [here](https://github.com/kal-aalrajhi/rock-paper-scissors).
+
+## Deployable
+- [Go play rock, paper, scissors for yourself!](https://kal-aalrajhi.github.io/rock-paper-scissors/)
