@@ -14,6 +14,7 @@
   - [Special Thanks](#special-thanks)
   - [Project Specs](#project-specs)
   - [Project GitHub Repo](#project-github-repo)
+  - [Deployable](#deployable)
 
 ## Introduction
 Users are encouraged to visit **Rock Paper Scissors** page to play the best thing since **kick the can**! The characters are a little differrent from classic **rock, paper, scissors**, but the game is essentially the same! User play the role of a 'human' playing against a computer, which randomly chooses it's character. There is a classic mode (3 characters) and a challenge mode (5 characters). Moreover, user and computer wins persist until the user chooses to clear the scores.
